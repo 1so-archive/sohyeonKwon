@@ -116,52 +116,6 @@ header .logo:hover a{
     bottom: 0;
     object-fit: cover;
 }
-/* .about .deco{
-    position: absolute;
-    top: 30%; right: 0;
-}
-.about .deco span{
-    position: absolute;
-    display: block;
-    background-color: #000;
-    width: 10px;
-    height: 10px;
-}
-.about .deco span.sq1{
-    right: 20px;
-    top: 0;
-}
-.about .deco span.sq2{
-    right: 20px;
-    top: 95px;
-}
-.about .deco span.sq3{
-    right: 43px;
-    top: 70px;
-}
-.about .deco span.sq4{
-    right: 200px;
-    top: 150px;
-}
-.about .deco span.sq5{
-    right: 350px;
-    top: 100px;
-}
-.about .deco span.sq6{
-    right: 210px;
-    top: 200px;
-} */
-/* .about .img-wrap{
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-}
-.about .img-wrap img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-} */
 .about .txt-wrap{
     position: absolute;
     bottom: 0;
@@ -173,20 +127,6 @@ header .logo:hover a{
     font-weight: 600;
     /* letter-spacing: -5px;
     font-family: "Inter", sans-serif; */
-}
-.about .txt-wrap p::after{
-    content: '';
-    margin-left: .4rem;
-    border-right: 2px solid #000;
-    animation: cursor .9s infinite steps(1);
-    margin-bottom: 20px;
-}
-
-/* 커서 깜빡임을 위한 애니메이션 */
-@keyframes cursor {
-    50% {
-        border-color: transparent;  /* 커서가 깜빡일 때 border 색상을 투명으로 설정 */
-    }
 }
 
 /* 2 ability */

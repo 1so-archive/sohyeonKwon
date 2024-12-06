@@ -241,38 +241,3 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-// 타이핑효과
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const content = "Portfolio*";  // 원하는 텍스트
-    const text = document.querySelector(".txt-wrap p"); // .txt-wrap 안의 p 요소 선택
-    if (!text) {
-        console.error("텍스트 요소가 존재하지 않습니다.");
-        return;
-    }
-
-    let index = 0;
-
-    // 타이핑 효과 함수
-    function typing() {
-        if (index < content.length) {
-            text.textContent += content[index++];  // 타이핑 효과 적용
-            setTimeout(typing, 200);  // 200ms 간격으로 타이핑
-        } else {
-            console.log("타이핑 완료");  // 타이핑 완료 로그
-            // 타이핑이 끝나면 5초 후에 텍스트를 지움
-            setTimeout(() => {
-                text.textContent = "";  // 텍스트를 지움
-                index = 0;  // 인덱스를 다시 0으로 설정
-                setTimeout(typing, 2000);  // 2초 후 다시 타이핑 시작
-            }, 5000);  // 5초 후에 텍스트 지우기
-        }
-    }
-
-    typing();  // 타이핑 시작
-});
