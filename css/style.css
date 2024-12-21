@@ -8,11 +8,17 @@ img{height: auto; max-width: 100%;}
 .mo{
     display: none !important;
 }
+body{
+    background-color: #fff;
+}
 body, span{
     color: #000;
     font-family: Figtree, "NotoSansKR", "나눔 고딕", Helvetica, "Apple SD Gothic Neo", sans-serif;
 }
-.inner{padding: 1.25rem;}
+.inner{
+    /* padding: 1.25rem; */
+    padding: 0.8rem 2.25rem;
+}
 button{
     background-color: transparent;
     border: none;
@@ -23,6 +29,12 @@ header{
     position: fixed;
     padding: 0 1.25rem;
     z-index: 999;
+    mix-blend-mode: difference;
+    isolation: isolate;
+}
+header a{
+    color: #fff;
+    font-weight: 300;
 }
 header .header-inner{
     width: 100%;
@@ -32,7 +44,6 @@ header .header-inner{
     top: 0; left: 0;
     z-index: 999;
     padding: 24px 1.25rem 10px;
-    color: #000;
 }
 section{
     width: 100%;
@@ -41,10 +52,16 @@ section{
 /* header */
 header .logo{
     display: inline-block;
-    font-size: 18px; font-weight: 500;
+    font-size: 18px;
+}
+.logo.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
 }
 header .logo:hover a{
-    color: rgb(69 248 69);
+    /* color: rgb(69 248 69); */
+    color: #C736C7;
 }
 .gnb{
     float: right;
@@ -54,24 +71,27 @@ header .logo:hover a{
     padding: 0 8.4px;
     font-weight: 500;
 }
+.gnb.visible{
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s; 
+  }
 .gnb li a{
     font-size: 18px;
     line-height: 17px;
     overflow: hidden;
     padding: 2px 7px 1px;
     position: relative;
-    /* border-radius: 10px; */
+    border-radius: 10px;
 }
 
 .gnb li:hover a{
-    /* color: #fff; */
-    /* background-color: #000; */
-    background-color: #ff4646;
+    color: #000;
+    background-color: #fff;
 }
 .gnb li a.active {
-    /* color: #fff; */
-    /* background-color: #000; */
-    background-color: #ff4646;
+    color: #000;
+    background-color: #fff;
 }
 .mo-menu{
     color: #000;
@@ -82,9 +102,12 @@ header .logo:hover a{
     font-size: 18px;
     line-height: 17px;
     position: absolute;
+    color: #fff;
+    font-weight: lighter;
 }
 .open-menu:hover, .close-menu:hover{
-    color: rgb(69 248 69);
+    /* color: rgb(69 248 69); */
+    color: #C736C7;
 }
 .mo-menu .close-menu{
     display: none;
@@ -98,7 +121,8 @@ header .logo:hover a{
     margin-bottom: 5px;
 }
 .mobile-menu li a:hover{
-    color: rgb(69 248 69);
+    /* color: rgb(69 248 69); */
+    color: #C736C7;
 }
 /* about */
 .about{
@@ -107,19 +131,21 @@ header .logo:hover a{
     position: relative;
     padding: 0 1.25rem;
 }
-.about img{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    /* top: 0; */
-    right: 0;
-    bottom: 0;
-    object-fit: cover;
-}
+
 .about .txt-wrap{
     position: absolute;
     bottom: 0;
     right: 0;
+}
+.about .txt-wrap, .gnb, .logo {
+    opacity: 0;
+    transform: translateY(50px); /* 아래에서 위로 올라오는 효과 */
+    transition: opacity 1s cubic-bezier(.19, 1, .22, 1), transform 1s cubic-bezier(.19, 1, .22, 1);
+}
+.about .txt-wrap.visible {
+    opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
 }
 .about .txt-wrap p{
     margin: auto;
@@ -130,15 +156,22 @@ header .logo:hover a{
 }
 
 /* 2 ability */
-
-
+/* .ability .sec2 .inner{
+    display: flex;
+}
+.ability .year-lists.edu{
+    width: 47%;
+}
+.ability .year-lists.certi{
+    width: 53%;
+} */
 
 /* 3 work */
 .work{
     position: relative;
 }
 .work .wrap{
-    margin-top: 8vw;
+    margin-top: 5vw;
 }
 .work .fixed-text{
     display: flex;
@@ -192,40 +225,45 @@ header .logo:hover a{
     width: 100%;
     position: relative;
 }
-.work .sec1 .carrer-box{
+.sec1{
+    position: relative;
+}
+.skill{
+    position: absolute;
+    right: 2.25rem;
+    bottom: 10px;
+    display: inline-block;
+}
+.skill-title{
+    font-size: 1.6vw;
+    font-weight: 500;
+    letter-spacing: -0.04vw;
+}
+.carrer-box{
     display: flex;
     overflow: visible;
-    /* padding-top: 1.3vw; */
-    padding-top: 26.3vw;
+    align-items: baseline;
     text-align: left;
 }
 
-.work .sec1 .carrer-box .carrer-lists .skill{
-    display: inline-block;
-    font-size: 1.5vw;
-    font-weight: 500;
-    letter-spacing: -0.04vw;
-    vertical-align: middle;
-    padding-top: 1.7vw;
-}
-.work .sec1 .carrer-box > .carrer-lists,.work .sec1 .carrer-box .field-lists{
+.carrer-box > .carrer-lists,.work .sec1 .carrer-box .field-lists{
     opacity: 1;
     -webkit-transform: none;
     transform: none;
     transition: none;
 }
-.work .sec1 .carrer-box .field-lists{
-    margin: 0.1vw 0 0 4.6vw;
+.carrer-box .field-lists{
+    margin: 0.1vw 0 0 2.6vw;
     padding-top: 1.3vw;
 }
-.work .sec1 .carrer-box .field-lists ul li{
+.carrer-box .field-lists ul li{
     display: inline-block;
     padding: 0.33vw;
 }
-.work .sec1 .carrer-box .field-lists ul li:nth-child(5n+1) {
+.carrer-box .field-lists ul li:nth-child(5n+1) {
     clear: both;
 }
-.work .sec1 .carrer-box .field-lists ul li span{
+.carrer-box .field-lists ul li span{
     /* background: #fff; */
     border-radius: 1.05vw;
     display: inline-block;
@@ -235,6 +273,10 @@ header .logo:hover a{
     padding: 0.2vw 0.71vw;
     background-color: #eee;
 }
+
+
+
+
 
 .work .sec2 .inner{
     text-align: right;
@@ -254,22 +296,18 @@ header .logo:hover a{
     margin-top: 1.1vw;
     position: relative;
 }
-.work .sec2 .inner .cont-wrap .project-experience ul{
+.work .sec2 .inner .cont-wrap .project-experience > ul{
     display: block;
     opacity: 1;
     -webkit-transform: none;
     transform: none;
     transition: none;
-    margin-top: 1.58vw;
+    /* margin-top: 1.58vw; */
 }
-.work .sec2 .inner .cont-wrap .project-experience ul li{
-    padding: 0 0 12vw;
+.work .sec2 .inner .cont-wrap .project-experience > ul > li{
+    padding: 0 0 17vw;
     position: relative;
 }
-/* .work .sec2 .inner .cont-wrap .project-experience ul li a{
-    margin-top: 1.58vw;
-    position: relative;
-} */
 
 .work .sec2 .inner .cont-wrap .project-experience ul li a .text-box{
     margin-top: 0.2vw;
@@ -277,11 +315,12 @@ header .logo:hover a{
     z-index: 3;
 }
 .work .sec2 .inner .cont-wrap .project-experience ul li a .text-box ul li>span{
-    display: inline-block;
-    font-size: 1.3vw;
+    /* display: inline-block; */
+    font-size: 1.1vw;
     letter-spacing: -0.035vw;
     line-height: 1.28;
 }
+
 .work .sec2 .project-experience ul li.ani.active .text-box>ul>li>span {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -289,51 +328,84 @@ header .logo:hover a{
     transition-delay: 0.1s;
     transition: 1.05s cubic-bezier(.19,1,.22,1);
 }
-
-.work .sec2 .inner .cont-wrap .project-experience .img-box{
-    width: 31.2vw;
-    float: right;
-    margin: 1.58vw 8.2vw 0 0;
+.text-box .project-title{
+    font-size: 1.4vw;
 }
-.work .sec2 .inner .cont-wrap .project-experience .img-box>a{
+.text-box .sub-title{
+    width: 28%;
+}
+.work .project-experience .text-box_sub{
+    margin-top: 3.3vw;
+}
+.work .link-btn{
+    position: absolute;
+    left: 0;
+    bottom: 2.5rem;
+    z-index: 10;
+}
+.work .link-btn a{
+    font-size: 13px;
+    line-height: 17px;
+    overflow: hidden;
+    padding: 2px 7px 1px;
+    position: relative;
+    border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+    font-weight: 300;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.work .link-btn a:hover{
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+}
+/* 모니터이미지박스 */
+.work .project-experience .img-box{
+    width: 39vw;
+    float: right;
+    margin: 1.58vw 2vw 0 0;
+}
+.work .project-experience .img-box>a{
     position: relative;
     width: 100%;
     display: block;
     cursor: pointer;
     z-index: 3;
 }
-.work .sec2 .inner .cont-wrap .project-experience .img-box.gentlemonster{
-    background: url(../img/project_desktop1.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-.work .sec2 .inner .cont-wrap .project-experience .img-box.kasina{
-    background: url(../img/project_desktop2.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-.work .sec2 .inner .cont-wrap .project-experience>ul>li>* {
-    display: inline-block;
+.work .project-experience>ul>li>* {
     opacity: 1;
     -webkit-transform: none;
     transform: none;
     transition: none;
-    vertical-align: top;
+    margin-top: 1.58vw;
 }
-.work .sec2 .inner .cont-wrap .project-experience .year{
+
+/* 프로젝트 년도제목 */
+.work .sec2 .experience-title{
+    position: relative;
+}
+.work .sec2 .inner .year{
     position: absolute;
-    top: 1.15vw; right: 0;
+    bottom: 0.7rem;
+    right: 0;
 }
-.work .sec2 .inner .cont-wrap .project-experience .year span{
+.work .sec2 .inner .year span{
     display: inline-block;
     font-size: 1.2vw;
 }
+.work .sec2 .inner .year span:last-child{
+    margin-left: 8vw;
+}
+
+
 
 /* 4 archive */
 
 .archive h1{
     /* margin: 4.9vw 0 15.2vw .12vw; */
-    margin: 13.55vw 0 15.2vw .12vw;
+    margin: 13.55vw 0 0 .12vw;
 }
 .archive h1 span{
     font-size: 9.9vw;
@@ -389,16 +461,13 @@ header .logo:hover a{
 }
 
 /* sec2 */
-.archive .year-lists:first-child{
-    padding-bottom: 7vw;
-}
 .archive .sec-title{
     position: relative;
     padding-bottom: 0.78vh;
 }
 .archive .sec-title span{
     display: inline-block;
-    font-size: 5vw;
+    font-size: 4vw;
     letter-spacing: -0.14vw;
     line-height: 1.33;
     font-weight: 500;
@@ -406,14 +475,14 @@ header .logo:hover a{
 }
 .archive .year-lists>ul>li{
     display: flex;
-    padding-top: 0.85vh;
+    /* padding-top: 0.85vh; */
     padding-bottom: 6.5vh;
 }
 .archive .year-lists>ul>li:first-child{
     padding-top: 0;
 }
 .archive .year-lists .year{
-    width: 17%;
+    width: 30%;
 }
 .archive .year-lists .year .txt span{
     display: inline-block;
@@ -433,9 +502,7 @@ header .logo:hover a{
     position: relative;
 }
 
-/* .archive .sec2 .year-lists .content-lists{
-    padding: 0.8vw 0 4.5vw;
-} */
+
 .archive .year-lists .content-lists>li>span{
     display: inline-block;
     font-size: 1.65vw;
@@ -451,9 +518,12 @@ header .logo:hover a{
 }
 
 
-
-.archive .year-lists .title-lists{
-    width: 83%;
+.archive .year-lists.edu .title-lists{
+    width: 100%;
+    position: relative;
+}
+.archive .year-lists.certi .title-lists{
+    width: 70%;
     position: relative;
 }
 .archive .year-lists .content-lists>li{
@@ -483,6 +553,9 @@ header .logo:hover a{
 
 
 /* sec3 */
+.archive .sec3 .title-lists{
+    width: 100%;
+}
 .archive .year-lists.press{
     padding-bottom: 15.1vh;
 }
@@ -501,6 +574,7 @@ header .logo:hover a{
     transition: opacity 0.3s;
 }
 .contact h1{
+    margin-top: 5vw;
     margin-bottom: 30vw;
 }
 .contact h1 span {
@@ -530,8 +604,26 @@ header .logo:hover a{
     .about .img-wrap{
         height: 100vh;
     }
+    .ability .inner{
+        padding: 0.4rem 3.73vw;
+    }
+    .archive h1 span {
+        font-size: 7.9vw;
+    }
+    .ability .skill{
+        right: 3.73vw;
+    }
+    .skill-title {
+        font-size: 2.9vw;
+    }
+    .carrer-box .field-lists ul li span{
+        font-size: 2.2vw;
+    }
+    .carrer-box .field-lists {
+        margin: 0 0 0 5px;
+    }
     .work .wrap{
-        margin-top: 20vw;
+        margin-top: 10vw;
     }
     .work .fixed-text{
         height: auto;
@@ -554,7 +646,7 @@ header .logo:hover a{
         line-height: 1.6;
     }
     .work .sec1 .carrer-box {
-        display: block;
+        display: flex;
     }
     .work .sec1 .carrer-box .carrer-lists .skill {
         font-size: 4vw;
@@ -562,7 +654,7 @@ header .logo:hover a{
         line-height: 1.6;
     }
     .work .sec1 .carrer-box .field-lists {
-        margin: 1vw 0 0;
+        margin: 1vw 0 0 3vw;
     }
     .work .sec1 .carrer-box .field-lists ul li span {
         border-radius: 3.46vw;
@@ -576,6 +668,19 @@ header .logo:hover a{
     .work .sec2 .inner{
         text-align: left;
     }
+    .ability .year-lists.certi > ul > li{
+        padding-bottom: 3.5vh;
+    }
+    .work .sec2 .inner .year {
+        top: 3.1vw;
+        right: 0;
+    }
+    .work .sec2 .inner .year span{
+        font-size: 3vw;
+    }
+    .work .sec2 .inner .year span:last-child {
+        margin-left: 5vw;
+    }
     .work .sec2 .inner .cont-wrap{
         width: 100%;
         text-align: left;
@@ -584,15 +689,15 @@ header .logo:hover a{
         font-size: 6.66vw;
         letter-spacing: -0.2vw;
     }
-    .work .sec2 .inner .cont-wrap .project-experience{
-        margin-top: 2.6vw;
-    }
-    .work .sec2 .inner .cont-wrap .project-experience ul li a .text-box ul li>span{
+    .text-box .project-title{
         font-size: 4vw;
         letter-spacing: -0.12vw;
     }
-    .work .sec2 .project-experience>ul>li {
-        padding-bottom: 10vw;
+    .text-box_sub span{
+        font-size: 3.5vw;
+    }
+    .work .sec2 .inner .cont-wrap .project-experience > ul > li {
+        padding-bottom: 4vw;
     }
     /* .work .sec2 .inner .cont-wrap .project-experience ul li a {
         width: 100%;
@@ -613,26 +718,20 @@ header .logo:hover a{
     .work .sec2 .inner .cont-wrap .project-experience .year span {
         font-size: 4vw;
     }
-    .archive .year-lists:last-child{
-        padding-bottom: 17.4vw;
+    .archive .year-lists.certi .title-lists {
+        width: 100%;
     }
     .archive .sec-title span {
         font-size: 5vw;
     }
     .archive .year-lists .year .txt span {
-        font-size: 4.5vw;
+        font-size: 4.3vw;
     }
-    .archive .year-lists .title>span {
+    .archive .year-lists .title>span, .archive .year-lists .content-lists>li>span {
         font-size: 4vw;
-        letter-spacing: -0.12vw;
-    }
-    .archive .year-lists .content-lists>li>span {
-        font-size: 4vw;
-        letter-spacing: -0.12vw;
     }
     .archive .year-lists .content-lists>li button span {
         font-size: 4vw;
-        letter-spacing: -0.12vw;
     }
     .contact .footer{
         font-size: 12px;
@@ -646,16 +745,32 @@ header .logo:hover a{
 @media (min-width: 768px) {
     header .header-inner{
         align-items: center;
-        background-color: #fff;
+        /* background-color: #fff; */
+    }
+    .ability .sec2 .inner{
+        display: flex;
+    }
+    .ability .year-lists.edu{
+        width: 47%;
+    }
+    .ability .year-lists.certi{
+        width: 53%;
     }
     .work .scroll-container{
         margin-top: -14vw;
     }
     .work .sec2.poster{
-        padding-top: 10.55vw;
+        padding-top: 5vw;
     }
     .work .sec2.poster .inner .cont-wrap .project-experience ul li {
-        padding: 0 0 22vw;
+        padding: 0 0 18vw;
+    }
+    .work .sec2.poster .img-box{
+        width: 27vw;
+    }
+    .archive .year-lists.edu .title-lists{
+        width: 60%;
+        position: relative;
     }
     .contact .footer ul{
         margin-right: 130px;
