@@ -75,7 +75,7 @@ header .logo:hover a{
     opacity: 1;
     transform: translateY(0);
     transition-delay: 0.3s; 
-  }
+}
 .gnb li a{
     font-size: 18px;
     line-height: 17px;
@@ -98,12 +98,17 @@ header .logo:hover a{
     font-size: 18px;
     line-height: 17px;
 }
+.mo-menu.visible{
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s; 
+}
 .mo-menu > button{
     font-size: 18px;
     line-height: 17px;
     position: absolute;
     color: #fff;
-    font-weight: lighter;
+    font-weight: 300;
 }
 .open-menu:hover, .close-menu:hover{
     /* color: rgb(69 248 69); */
@@ -137,15 +142,15 @@ header .logo:hover a{
     bottom: 0;
     right: 0;
 }
-.about .txt-wrap, .gnb, .logo {
+.about .txt-wrap, .gnb, .logo, .mo-menu{
     opacity: 0;
     transform: translateY(50px); /* 아래에서 위로 올라오는 효과 */
     transition: opacity 1s cubic-bezier(.19, 1, .22, 1), transform 1s cubic-bezier(.19, 1, .22, 1);
 }
 .about .txt-wrap.visible {
     opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.1s;
+    transform: translateY(0);
+    transition-delay: 0.1s;
 }
 .about .txt-wrap p{
     margin: auto;

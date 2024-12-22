@@ -107,7 +107,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const elements = [
       document.querySelector(".txt-wrap"), 
       document.querySelector(".gnb"),     
-      document.querySelector(".logo")      
+      document.querySelector(".logo"),
+      document.querySelector(".mo-menu")      
     ];
   
     elements.forEach((element, index) => {
