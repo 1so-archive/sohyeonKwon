@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }, {
         threshold: 0.12,  // 섹션이 12% 보일 때 바로 활성화
-        rootMargin: "0px 0px -20% 0px"  // 섹션이 화면 하단에서 20%만큼 보일 때 활성화
+        rootMargin: "0px 0px -10% 0px"  // 섹션이 화면 하단에서 20%만큼 보일 때 활성화
     });
 
     // 각 섹션을 observer로 등록합니다
@@ -101,6 +101,24 @@ $(document).ready(function(){
         $('.open-menu').fadeIn(0);
     });
 });
+
+//메인 텍스트
+window.addEventListener("DOMContentLoaded", () => {
+    const elements = [
+      document.querySelector(".txt-wrap"), 
+      document.querySelector(".gnb"),     
+      document.querySelector(".logo")      
+    ];
+  
+    elements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("visible");
+      }, 100 * index); 
+    });
+});
+  
+  
+    
 
 // 마우스
   
