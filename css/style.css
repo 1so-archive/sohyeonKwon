@@ -231,7 +231,7 @@ header .logo:hover a{
 .skill{
     position: absolute;
     right: 2.25rem;
-    bottom: 10px;
+    bottom: 9px;
     display: inline-block;
 }
 .skill-title{
@@ -242,7 +242,7 @@ header .logo:hover a{
 .carrer-box{
     display: flex;
     overflow: visible;
-    align-items: baseline;
+    align-items: end;
     text-align: left;
 }
 
@@ -562,10 +562,6 @@ header .logo:hover a{
 .archive .year-lists.press .content-lists>li .img-box {
     display: none;
 }
-.archive .year-lists.press .content-lists>li .img-box p{
-    width: 300px;
-    margin: auto;
-}
 .archive .year-lists.press .content-lists>li .img-box.on img {
     opacity: 1;
 }
@@ -614,7 +610,7 @@ header .logo:hover a{
         right: 3.73vw;
     }
     .skill-title {
-        font-size: 2.9vw;
+        font-size: 3.4vw;
     }
     .carrer-box .field-lists ul li span{
         font-size: 2.2vw;
@@ -665,6 +661,9 @@ header .logo:hover a{
     .work .sec3{
         padding-bottom: 18.2vw;
     }
+    .work .sec2.poster{
+        margin-top: 5vw;
+    }
     .work .sec2 .inner{
         text-align: left;
     }
@@ -699,10 +698,10 @@ header .logo:hover a{
     .work .sec2 .inner .cont-wrap .project-experience > ul > li {
         padding-bottom: 4vw;
     }
-    /* .work .sec2 .inner .cont-wrap .project-experience ul li a {
-        width: 100%;
-        margin-top: 4vw;
-    } */
+    .work .sec2 .inner .cont-wrap .project-experience > ul > li > a {
+        width: 82%;
+        margin-top: 3vw;
+    }
     .work .sec2 .inner .cont-wrap .project-experience .img-box{
         /* width: 92.53vw; */
         width: 100%;
@@ -717,6 +716,9 @@ header .logo:hover a{
     }
     .work .sec2 .inner .cont-wrap .project-experience .year span {
         font-size: 4vw;
+    }
+    #archive h1{
+        margin-bottom: 0.8rem;
     }
     .archive .year-lists.certi .title-lists {
         width: 100%;
@@ -747,6 +749,12 @@ header .logo:hover a{
         align-items: center;
         /* background-color: #fff; */
     }
+    .skill{
+        bottom: 10px;
+    }
+    .carrer-box {
+        align-items: baseline;
+    }
     .ability .sec2 .inner{
         display: flex;
     }
@@ -771,6 +779,13 @@ header .logo:hover a{
     .archive .year-lists.edu .title-lists{
         width: 60%;
         position: relative;
+    }
+    #archive .year-lists .year {
+        width: 25%;
+    }
+    .archive .year-lists.press .content-lists>li .img-box p{
+        width: 300px;
+        margin: auto;
     }
     .contact .footer ul{
         margin-right: 130px;
