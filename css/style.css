@@ -337,7 +337,7 @@ header .logo:hover a{
     font-size: 1.4vw;
 }
 .text-box .sub-title{
-    width: 28%;
+    width: 26%;
 }
 .work .project-experience .text-box_sub{
     margin-top: 3.3vw;
@@ -392,9 +392,8 @@ header .logo:hover a{
     position: relative;
 }
 .work .sec2 .inner .year{
+    display: none;
     position: absolute;
-    bottom: 0.7rem;
-    right: 0;
 }
 .work .sec2 .inner .year span{
     display: inline-block;
@@ -434,6 +433,29 @@ header .logo:hover a{
     -webkit-transform: translateY(0);
     transform: translateY(0);
 }
+
+/* ani2 */
+.img-box.type1{
+    font-size: 0;
+    overflow: hidden;
+    display: block;
+}
+.img-box.ani2 > a,
+.img-box.ani2 > a > img {
+  opacity: 0;
+  transform: translateY(20%);
+  display: inline-block;
+  transition: 1.05s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.img-box.ani2.active > a,
+.img-box.ani2.active > a > img {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* line */
 .line-top, .line-bottom {
     position: relative;
 }
@@ -567,6 +589,11 @@ header .logo:hover a{
 .archive .year-lists.press .content-lists>li .img-box {
     display: none;
 }
+.archive .year-lists.press .content-lists>li .img-box ul{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
 .archive .year-lists.press .content-lists>li .img-box.on img {
     opacity: 1;
 }
@@ -598,6 +625,12 @@ header .logo:hover a{
     }
     .inner{
         padding: 0 3.73vw;
+    }
+    .link-btn{
+        display: none;
+    }
+    header .header-inner {
+        padding: 24px 3.73vw 10px;
     }
     .about{
         height: 85vh;
@@ -717,6 +750,7 @@ header .logo:hover a{
         padding: 0;
     }
     .work .sec2 .inner .cont-wrap .project-experience .year{
+        display: block;
         top: 4vw;
     }
     .work .sec2 .inner .cont-wrap .project-experience .year span {
@@ -750,6 +784,9 @@ header .logo:hover a{
 
 
 @media (min-width: 768px) {
+    .fit{
+        width: fit-content;
+    }
     header .header-inner{
         align-items: center;
         /* background-color: #fff; */
@@ -775,11 +812,11 @@ header .logo:hover a{
     .work .sec2.poster{
         padding-top: 5vw;
     }
-    .work .sec2.poster .inner .cont-wrap .project-experience ul li {
-        padding: 0 0 18vw;
+    .work .sec2.poster .inner .cont-wrap .project-experience > ul > li {
+        padding: 0 0 26vw;
     }
     .work .sec2.poster .img-box{
-        width: 27vw;
+        width: 25vw;
     }
     .archive .year-lists.edu .title-lists{
         width: 60%;
@@ -788,9 +825,13 @@ header .logo:hover a{
     #archive .year-lists .year {
         width: 25%;
     }
-    .archive .year-lists.press .content-lists>li .img-box p{
-        width: 300px;
-        margin: auto;
+    /* .archive .year-lists.press .content-lists>li .img-box p{
+        height: 300px;
+        display: flex;
+        justify-content: space-evenly;
+    } */
+    .text-box .project-title {
+        width: 21vw;
     }
     .contact .footer ul{
         margin-right: 130px;

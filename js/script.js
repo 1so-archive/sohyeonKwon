@@ -43,6 +43,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// ani2
+document.addEventListener("scroll", () => {
+    const imgBoxes = document.querySelectorAll(".img-box.ani2");
+  
+    imgBoxes.forEach((box) => {
+      const rect = box.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+  
+      if (isVisible) {
+        box.classList.add("active");
+      } else {
+        box.classList.remove("active"); // 필요에 따라 제거
+      }
+    });
+  });
+  
 
 
 // 네비게이션
