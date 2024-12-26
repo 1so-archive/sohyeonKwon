@@ -1,20 +1,34 @@
 
 // 아코디언 효과
-$(document).ready(function() {
-    $('.content-lists button').click(function() {
-        const imgBox = $(this).siblings('.img-box');
-        imgBox.toggleClass('on');
+// $(document).ready(function() {
+//     $('.content-lists button').click(function() {
+//         const imgBox = $(this).siblings('.img-box');
+//         imgBox.toggleClass('on');
 
-        // img-box의 on 클래스 여부에 따라 슬라이드 토글
-        if (imgBox.hasClass('on')) {
-            imgBox.stop().slideDown(300);
-        } else {
-            imgBox.stop().slideUp(300);
-        }
-    });
+//         // img-box의 on 클래스 여부에 따라 슬라이드 토글
+//         if (imgBox.hasClass('on')) {
+//             imgBox.stop().slideDown(300);
+//         } else {
+//             imgBox.stop().slideUp(300);
+//         }
+//     });
     
 
-});
+// });
+
+// 브라우저의 자동 스크롤 복원 비활성화
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  
+  // 페이지 새로고침 또는 닫을 때 스크롤 초기화
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+
+  document.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
+  });
 
 // active 효과
 document.addEventListener('DOMContentLoaded', function() {
@@ -82,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }, {
-        threshold: 0.12,  // 섹션이 12% 보일 때 바로 활성화
+        threshold: 0.2,  // 섹션이 12% 보일 때 바로 활성화
         rootMargin: "0px 0px -10% 0px"  // 섹션이 화면 하단에서 20%만큼 보일 때 활성화
     });
 

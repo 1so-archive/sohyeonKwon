@@ -1,0 +1,191 @@
+
+
+/* sec2 */
+.archive{
+    cursor: default;
+}
+.archive .sec-title{
+    position: relative;
+    padding-bottom: 0.78vh;
+}
+.archive .sec-title span{
+    display: inline-block;
+    font-size: 4vw;
+    letter-spacing: -0.14vw;
+    line-height: 1.33;
+    font-weight: 500;
+    padding-top: 0.78vh;
+}
+.archive .year-lists>ul>li{
+    display: flex;
+    /* padding-top: 0.85vh; */
+    padding-bottom: 6.5vh;
+}
+.archive .year-lists>ul>li:first-child{
+    padding-top: 0;
+}
+.archive .year-lists .year{
+    width: 30%;
+}
+.archive .year-lists .year .txt span{
+    display: inline-block;
+    font-size: 2.3vw;
+    letter-spacing: -0.06vw;
+    line-height: 2;
+}
+.archive .year-lists .title>span{
+    display: inline-block;
+    font-size: 1.98vw;
+    font-weight: 400;
+    letter-spacing: -0.06vw;
+    line-height: 1.6;
+}
+.archive .year-lists .title-lists>li .title{
+    padding: 0.65vw 0 0.45vw;
+    position: relative;
+}
+
+
+.archive .year-lists .content-lists>li>span{
+    display: inline-block;
+    font-size: 1.65vw;
+    letter-spacing: -0.05vw;
+}
+.archive .content-lists li.ani.active span{
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+.archive .content-lists li.ani.active:first-child span{
+    transition-delay: 0.01s;
+}
+
+
+.archive .year-lists.edu .title-lists{
+    width: 100%;
+    position: relative;
+}
+.archive .year-lists.certi .title-lists{
+    width: 70%;
+    position: relative;
+}
+.archive .year-lists .content-lists>li{
+    display: block;
+    padding: 0.75vw 0 0.3vw;
+    position: relative;
+}
+.archive .year-lists .content-lists>li button{
+    text-align: left;
+    width: 100%;
+    border: none;
+    background: transparent;
+    cursor: default;
+}
+.archive .year-lists .content-lists>li button span{
+    transition-delay: 0.01s;
+    font-size: 1.78vw;
+    letter-spacing: -0.055vw;
+    line-height: 1.8;
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.archive .content-lists li.ani.active:first-child:after{
+    transition-delay: 0.01s;
+}
+
+
+/* sec3 */
+.archive .sec3 .title-lists{
+    width: 100%;
+}
+.archive .year-lists.press{
+    padding-bottom: 15.1vh;
+}
+.archive .year-lists.press .content-lists>li .img-box {
+    display: block;
+}
+.archive .year-lists.press .content-lists>li .img-box.on img {
+    opacity: 1;
+}
+.archive .year-lists.press .content-lists>li .img-box img {
+    /* opacity: 0; */
+    transition: opacity 0.3s;
+}
+
+@media (max-width: 767px) {
+    #archive h1{
+        margin-bottom: 0.8rem;
+    }
+    .archive .year-lists.certi .title-lists {
+        width: 100%;
+    }
+    .archive .sec-title span {
+        font-size: 5vw;
+    }
+    .archive .year-lists .year .txt span {
+        font-size: 4.3vw;
+    }
+    .archive .year-lists .title>span, .archive .year-lists .content-lists>li>span {
+        font-size: 4vw;
+    }
+    .archive .year-lists .content-lists>li button span {
+        font-size: 4vw;
+    }
+    .archive .img-box.archive1 ul li:first-child, 
+    .archive .img-box.archive3 ul li:first-child,
+    .archive .img-box.archive4 ul li:first-child,
+    .archive .img-box.archive5 ul li {
+        width: 66%;
+        margin: auto;
+        margin-top: 3%;
+    }
+    .archive .img-box.archive1 ul li:last-child{
+        margin-top: -17%;
+    }
+    .archive .img-box.archive2 ul li:last-child{
+        margin-top: -5%;
+    }
+    .archive .img-box.archive4 ul li:last-child{
+        margin-top: -11%;
+    }
+    .archive .img-box.archive5 ul li:last-child{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+}
+@media (min-width: 768px) {
+    .archive .year-lists.edu .title-lists{
+        width: 60%;
+        position: relative;
+    }
+    #archive .year-lists .year {
+        width: 25%;
+    }
+    .archive .img-box ul{
+        height: 33vw;
+    }
+    .archive .year-lists.press .content-lists>li .img-box ul{
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        justify-content: space-evenly;
+        padding-bottom: 5px;
+    }
+    .archive .img-box.archive1 ul li,.archive .img-box.archive3 ul li:first-child, .archive .img-box.archive4 ul li:first-child{
+        width: 22vw;
+    }
+    .archive .img-box.archive1 ul li:not(:first-child){
+        width: 25vw;
+    }
+    .archive .img-box.archive2 ul, .archive .img-box.archive5 ul{
+        height: 26vw;
+    }
+    .archive .img-box.archive2 ul li, .archive .img-box.archive3 ul li:last-child{
+        width: 30vw;
+    }
+    .archive .img-box ul li{
+        width: 24vw;
+    }
+}
