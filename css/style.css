@@ -59,9 +59,6 @@ header .logo{
     transform: translateY(0);
     transition-delay: 0.5s;
 }
-header .logo:hover a{
-    filter: blur(0.12rem);
-}
 .gnb{
     float: right;
 }
@@ -158,9 +155,9 @@ header .logo:hover a{
     /* letter-spacing: -5px;
     font-family: "Inter", sans-serif; */
 }
-.about .txt-wrap p:hover{
+/* .about .txt-wrap p:hover{
     filter: blur(0.19rem);
-}
+} */
 .archive h1{
     margin: 13.55vw 0 0 .12vw;
 }
@@ -319,6 +316,9 @@ header .logo:hover a{
     .link-btn{
         display: none;
     }
+    header .logo:hover a{
+        filter: blur(0.12rem);
+    }
     header .header-inner {
         padding: 24px 3.73vw 10px;
     }
@@ -383,3 +383,8 @@ header .logo:hover a{
         margin-right: 7.5rem;
     } 
 }
+
+
+
+
+  
